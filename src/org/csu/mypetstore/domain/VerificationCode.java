@@ -66,10 +66,10 @@ public class VerificationCode extends HttpServlet {
         g.fillRect(0, 0, width, height);
 
         /*
-         * 随机产生120个干扰点
+         * 随机产生140个干扰点
          */
 
-        for(int i=0;i<120;i++){
+        for(int i=0;i<140;i++){
             int x=(int)(Math.random()*width);
             int y=(int)(Math.random()*height);
             int red=(int)(Math.random()*255);
