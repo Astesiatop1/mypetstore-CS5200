@@ -29,16 +29,25 @@
         </div>
     </div>
 
+    <div id="inform" style="display: none">viewproduct</div>
+    <script type="text/javascript" src="${pageContext.request.contextPath }/js/viewcategory.js"></script>
+
     <div id="MainImage">
         <div id="MainImageContent">
             <!--中间显示栏-->
             <map name="estoremap">
-                <area alt="Birds" coords="72,2,280,250" href="viewCategory?categoryId=BIRDS" shape="rect" />
-                <area alt="Fish" coords="2,180,72,250" href="viewCategory?categoryId=FISH" shape="rect" />
-                <area alt="Dogs" coords="60,250,130,320" href="viewCategory?categoryId=DOGS" shape="rect" />
-                <area alt="Reptiles" coords="140,270,210,340" href="viewCategory?categoryId=REPTILES" shape="rect" />
-                <area alt="Cats" coords="225,240,295,310" href="viewCategory?categoryId=CATS" shape="rect" />
-                <area alt="Birds" coords="280,180,350,250" href="viewCategory?categoryId=BIRDS" shape="rect" />
+                <area alt="Birds" coords="72,2,280,250" href="viewCategory?categoryId=BIRDS" shape="rect"
+                      onmouseover="showInblock(alt);" onmouseout="hideblock(event)"/>
+                <area alt="Fish" coords="2,180,72,250" href="viewCategory?categoryId=FISH" shape="rect"
+                      onmouseover="showInblock(alt);" onmouseout="hideblock(event)"/>
+                <area alt="Dogs" coords="60,250,130,320" href="viewCategory?categoryId=DOGS" shape="rect"
+                      onmouseover="showInblock(alt);" onmouseout="hideblock(event)"/>
+                <area alt="Reptiles" coords="140,270,210,340" href="viewCategory?categoryId=REPTILES" shape="rect"
+                      onmouseover="showInblock(alt);" onmouseout="hideblock(event)"/>
+                <area alt="Cats" coords="225,240,295,310" href="viewCategory?categoryId=CATS" shape="rect"
+                      onmouseover="showInblock(alt);" onmouseout="hideblock(event)"/>
+                <area alt="Birds" coords="280,180,350,250" href="viewCategory?categoryId=BIRDS" shape="rect"
+                      onmouseover="showInblock(alt);" onmouseout="hideblock(event)"/>
             </map>
             <img height="355" src="images/splash.gif" align="middle" usemap="#estoremap" width="350" />
         </div>
