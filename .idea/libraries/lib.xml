@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../../../../javaSSD1/apache-tomcat-8.5.35/lib/jsp-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../../../javaSSD1/apache-tomcat-8.5.35/lib/jstl-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../../../javaSSD1/apache-tomcat-8.5.35/lib/mysql-connector-java-8.0.26.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../../../javaSSD1/apache-tomcat-8.5.35/lib/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../../../javaSSD1/apache-tomcat-8.5.35/lib/standard-1.1.2.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../../../../../../javaSSD1/apache-tomcat-8.5.35/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../../../../javaSSD1/apache-tomcat-8.5.35/lib" recursive="false" />
+  </library>
+</component>

@@ -283,7 +283,7 @@
         <servlet-name>JSViewCategoryServlet</servlet-name>
         <url-pattern>/JSViewCategory</url-pattern>
     </servlet-mapping>
-    
+
     <servlet>
         <servlet-name>UsernameExistServlet</servlet-name>
         <servlet-class>org.csu.mypetstore.web.servlets.UsernameExistServlet</servlet-class>
@@ -292,7 +292,7 @@
         <servlet-name>UsernameExistServlet</servlet-name>
         <url-pattern>/usernameExist</url-pattern>
     </servlet-mapping>
-    
+
     <servlet>
         <servlet-name>CodeSameServlet</servlet-name>
         <servlet-class>org.csu.mypetstore.web.servlets.CodeSameServlet</servlet-class>
@@ -301,4 +301,5 @@
         <servlet-name>CodeSameServlet</servlet-name>
         <url-pattern>/codeSame</url-pattern>
     </servlet-mapping>
+
 </web-app>
