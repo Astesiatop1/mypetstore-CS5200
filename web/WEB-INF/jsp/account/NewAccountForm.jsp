@@ -9,15 +9,23 @@ ${sessionScope.messageAccount}
 		<table>
 			<tr>
 				<td>User ID:</td>
-				<td><input type="text" name="username"/></td>
+				<td>
+					<input type="text" name="username" id="username" onblur="checkUsername()"/>
+					<span id="usernameTips"></span>
+					<script type="text/javascript" src="${pageContext.request.contextPath }/js/usernameExist.js"></script>
+				</td>
 			</tr>
 			<tr>
 				<td>New password:</td>
-				<td><input type="text" name="password" /></td>
+				<td><input type="text" name="password" id="password"/></td>
 			</tr>
 			<tr>
 				<td>Repeat password:</td>
-				<td><input type="text" name="repeatedPassword" /></td>
+				<td>
+					<input type="text" name="repeatedPassword" id="repeatedPassword" onblur="checkCodeSame()"/>
+				    <span id="codeTips"></span>
+					<script type="text/javascript" src="${pageContext.request.contextPath }/js/codeSame.js"></script>
+				</td>
 			</tr>
 			<tr>
 				<td>VerificationCode:</td>
