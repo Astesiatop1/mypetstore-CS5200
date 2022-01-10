@@ -34,10 +34,10 @@ function processResponse() {
         if (xmlHttpRequest.status == 200) {
             var resp = xmlHttpRequest.responseText;
             //显示悬浮层
-            var inform = document.getElementById('inform');
+            var inform = document.getElementById("inform");
             inform.innerText = resp;
             fadeIn(inform,20);
-            inform.style.display = 'block';
+            inform.style.display = "block";
         }
     }
 }
@@ -52,6 +52,8 @@ function hideblock(event){
     var divy2 = informDiv.offsetTop + informDiv.offsetHeight;
     if( x < divx1 || x > divx2 || y < divy1 || y > divy2){
         fadeOut(informDiv);
+        //document.getElementById('inform').style.display='none';
+
     }
 
 }
