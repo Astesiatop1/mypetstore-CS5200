@@ -39,6 +39,8 @@ public class NewOrderFormServlet extends HttpServlet {
             order.initOrder(account, cart);
             session.setAttribute("order", order);
 
+            System.out.println("?");
+
             Account account = (Account)session.getAttribute("account");
 
             if(account != null){

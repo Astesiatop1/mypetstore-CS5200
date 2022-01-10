@@ -20,6 +20,23 @@ public class ConfirmOrderFormServlet extends HttpServlet {
     private String shippingAddressRequired;
     private Order order;
     private OrderService orderService;
+    private String shipToFirstName;
+    private String shipToLastName;
+    private String shipAddress1;
+    private String shipAddress2;
+    private String shipCity;
+    private String shipState;
+    private String shipZip;
+    private String shipCountry;
+
+    private String billToFirstName;
+    private String billToLastName;
+    private String billAddress1;
+    private String billAddress2;
+    private String billCity;
+    private String billState;
+    private String billZip;
+    private String billCountry;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
@@ -31,6 +48,45 @@ public class ConfirmOrderFormServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         order = (Order)session.getAttribute("order");
+
+        shipToFirstName = request.getParameter("shipToFirstName");
+        shipToLastName = request.getParameter("shipToLastName");
+        shipAddress1 = request.getParameter("shipAddress1");
+        shipAddress2 = request.getParameter("shipAddress2");
+        shipCity = request.getParameter("shipCity");
+        shipState = request.getParameter("shipState");
+        shipZip = request.getParameter("shipZip");
+        shipCountry = request.getParameter("shipCountry");
+
+        billToFirstName = request.getParameter("billToFirstName");
+        billToLastName = request.getParameter("billToLastName");
+        billAddress1 = request.getParameter("billAddress1");
+        billAddress2 = request.getParameter("billAddress2");
+        billCity = request.getParameter("billCity");
+        billState = request.getParameter("billState");
+        billZip = request.getParameter("billZip");
+        billCountry = request.getParameter("billCountry");
+
+        order.setShipToFirstName(shipToFirstName);
+        order.setShipToLastName(shipToLastName);
+        order.setShipAddress1(shipAddress1);
+        order.setShipAddress2(shipAddress2);
+        order.setShipCity(shipCity);
+        order.setShipState(shipState);
+        order.setShipZip(shipZip);
+        order.setShipCountry(shipCountry);
+
+        order.setBillToFirstName(billToFirstName);
+        order.setBillToLastName(billToLastName);
+        order.setBillAddress1(billAddress1);
+        order.setBillAddress2(billAddress2);
+        order.setBillCity(billCity);
+        order.setBillState(billState);
+        order.setBillZip(billZip);
+        order.setBillCountry(billCountry);
+        System.out.println("?");
+
+        session.setAttribute("order",order);
         Account account = (Account)session.getAttribute("account");
 
         if (shippingAddressRequired == null){

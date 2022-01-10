@@ -1,0 +1,16 @@
+*{
+    text-align: center;
+}
+nav li{
+    display: inline;
+    width: 24%;
+    text-decoration: none;
+    padding: 15px;
+}
+li:hover{
+    background-color: lightblue;
+}
+
+section{
+    height: 300px;
+}
