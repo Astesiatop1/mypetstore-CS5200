@@ -11,7 +11,7 @@ ${sessionScope.messageAccount}
 				<td>User ID:</td>
 				<td>
 					<input type="text" name="username" id="username" onblur="checkUsername()"/>
-					<span id="usernameTips"></span>
+					<div id="usernameTips"></div>
 					<script type="text/javascript" src="${pageContext.request.contextPath }/js/usernameExist.js"></script>
 				</td>
 			</tr>
@@ -23,7 +23,7 @@ ${sessionScope.messageAccount}
 				<td>Repeat password:</td>
 				<td>
 					<input type="text" name="repeatedPassword" id="repeatedPassword" onblur="checkCodeSame()"/>
-				    <span id="codeTips"></span>
+				    <div id="codeTips"></div>
 					<script type="text/javascript" src="${pageContext.request.contextPath }/js/codeSame.js"></script>
 				</td>
 			</tr>

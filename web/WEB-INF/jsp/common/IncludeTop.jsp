@@ -3,11 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
 
 <head>
     <link rel="StyleSheet" href="css/jpetstore.css" type="text/css" media="screen" />
+    <link rel="StyleSheet" href="css/searchProduct.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/viewcategoryblock.css" type="text/css" media="screen" />
 
 
@@ -56,7 +55,7 @@
             </c:if>
             <img align="middle" src="images/separator.gif" />
             <!--暂未提供-->
-            <a href="../help.html">?</a>
+            <a href="viewHelp">?</a>
         </div>
     </div>
 
@@ -65,7 +64,12 @@
             <!--搜索栏目-->
             <form action="searchProduct" method="post">
                 <input type="text" id="keyword" name="keyword" size="14" />
+                <div class="auto hidden" id="auto">
+                    <div class="auto_out">1</div>
+                    <div class="auto_out">2</div>
+                </div>
                 <input type="submit" name="searchProducts" value="Search" />
+                <script src="js/searchProduct.js"></script>
             </form>
         </div>
     </div>

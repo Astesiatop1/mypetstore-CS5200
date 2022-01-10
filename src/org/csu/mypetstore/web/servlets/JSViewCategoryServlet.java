@@ -1,6 +1,6 @@
 package org.csu.mypetstore.web.servlets;
 
-import com.sun.org.apache.xml.internal.resolver.Catalog;
+//import com.sun.org.apache.xml.internal.resolver.Catalog;
 import org.csu.mypetstore.domain.Category;
 import org.csu.mypetstore.domain.Product;
 import org.csu.mypetstore.service.CatalogService;

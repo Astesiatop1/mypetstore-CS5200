@@ -302,4 +302,21 @@
         <url-pattern>/codeSame</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ViewHelpServlet</servlet-name>
+        <servlet-class>org.csu.mypetstore.web.servlets.ViewHelpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewHelpServlet</servlet-name>
+        <url-pattern>/viewHelp</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FindResultServlet</servlet-name>
+        <servlet-class>org.csu.mypetstore.web.servlets.FindResultServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FindResultServlet</servlet-name>
+        <url-pattern>/findResultServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
