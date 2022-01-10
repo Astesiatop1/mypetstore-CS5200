@@ -16,7 +16,7 @@
 	<c:forEach var="product" items="${sessionScope.productList}">
 		<tr>
 			<td>
-			     <a href="viewProduct?productId=${product.productId}">${product.productId}</a>
+			     <a href="viewProduct?productId=${product.productId}" onmouseover="">${product.productId}</a>
 			</td>
 			<td>
 				${product.name}

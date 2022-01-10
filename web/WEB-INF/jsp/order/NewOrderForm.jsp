@@ -37,7 +37,7 @@
 
 			<nav id="nav" style="text-align:center;vertical-align:middle;">
 				<ul>
-					<li class="act" style="font-weight:bold">Billing address</li>
+					<li class="act" style="font-weight:bold;background-color: #6699ff">Billing address</li>
 					<li style="font-weight:bold">Shipping address</li>
 				</ul>
 			</nav>
@@ -160,10 +160,12 @@
 						oNav[i].onclick=function () {
 							for(var i=0;i<oNav.length;i++){
 								oNav[i].className='';
+								oNav[i].style.backgroundColor="#ececec";
 								oDiv[i].style.display="none";
 							}
 							this.className='act';
-							oDiv[this.index].style.display="block"
+                            this.style.backgroundColor="#6699ff";
+							oDiv[this.index].style.display="block";
 						}
 						for(var m=1;m<oNav.length;m++){
 							oNav[m].className='';
