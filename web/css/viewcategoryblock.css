@@ -16,7 +16,7 @@
     width: 350px;
     max-height: 350px;           /* 设置最大高度，当高度达到此值时出现滚动条 */
     z-index: 10;
-    background-color: #E0E5E5;
+    background-color: pink;
     word-wrap: break-word;
     box-shadow:0px 0px 10px #000;   /* 外阴影 */
     display: none;   /* 默认隐藏 */

@@ -9,10 +9,37 @@
 	<form action="signOn" method="post">
 		<p>Please enter your username and password.</p>
 		<p>
-			Username:<input type="text" name="username" value="j2ee"/><br />
-		    Password:<input type="password" name="password" value="j2ee"/><br />
-			VerificationCode:<input type="text" name="vCode" size="5" maxlength="4"/>
-			<a href="signOn"><img border="0" src="verificationCode" name="checkcode"></a>
+			<table>
+		<tr>
+			<td>
+				Username:
+			</td>
+			<td>
+				<input type="text" name="username" value="j2ee"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Password:
+			</td>
+			<td>
+				<input type="password" name="password" value="j2ee"/><br />
+			</td>
+		</tr>
+		<tr>
+			<td>
+				VerificationCode:
+			</td>
+			<td>
+				<input type="text" name="vCode" size="5" maxlength="4"/>
+			</td>
+			<td>
+				<a href="signOn"><img border="0" src="verificationCode" name="checkcode"></a>
+			</td>
+		</tr>
+	</table>
+
+
 		</p>
 		<input type="submit" name="signon" value="Login" />
 	</form>
