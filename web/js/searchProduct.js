@@ -1,3 +1,20 @@
+var xmlHttpRequest;
+function createXMLHttpRequest()
+{
+    if (window.XMLHttpRequest) //非IE浏览器
+    {
+        xmlHttpRequest = new XMLHttpRequest();
+    }
+    else if (window.ActiveObject)//IE6以上版本的IE浏览器
+    {
+        xmlHttpRequest = new ActiveObject("Msxml2.XMLHTTP");
+    }
+    else //IE6及以下版本IE浏览器
+    {
+        xmlHttpRequest = new ActiveObject("Microsoft.XMLHTTP");
+    }
+}
+
 Array.prototype.unique = function(){
     this.sort();
     var res = [];
@@ -143,23 +160,6 @@ AutoComplete.prototype = {
             window.onresize = Bind(This);
         }
     }
-
-var xmlHttpRequest;
-function createXMLHttpRequest()
-{
-    if (window.XMLHttpRequest) //非IE浏览器
-    {
-        xmlHttpRequest = new XMLHttpRequest();
-    }
-    else if (window.ActiveObject)//IE6以上版本的IE浏览器
-    {
-        xmlHttpRequest = new ActiveObject("Msxml2.XMLHTTP");
-    }
-    else //IE6及以下版本IE浏览器
-    {
-        xmlHttpRequest = new ActiveObject("Microsoft.XMLHTTP");
-    }
-}
 
 var keyword = document.getElementById('keyword').value;
 sendRequest("findResultServlet?keyword=" + keyword);

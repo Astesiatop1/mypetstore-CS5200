@@ -9,7 +9,7 @@ function checkCodeSame(){
         if(password==repeatedPassword){
             document.getElementById("codeTips").innerHTML="<font color='green'>密码一致！</font>";
         }else{
-            document.getElementById("codeTips").innerHTML= "<font color='red'>密码不一致，请重新输入！</font>";
+            document.getElementById("codeTips").innerHTML= "<font color='red'>错误，密码不一致！</font>";
         }
     }else{
         document.getElementById("codeTips").innerText= "";
