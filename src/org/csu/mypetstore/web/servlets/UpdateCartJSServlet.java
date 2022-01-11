@@ -2,6 +2,8 @@ package org.csu.mypetstore.web.servlets;
 
 import org.csu.mypetstore.domain.Cart;
 import org.csu.mypetstore.domain.CartItem;
+import org.csu.mypetstore.domain.Item;
+import org.csu.mypetstore.service.CatalogService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,15 +17,27 @@ import java.util.Iterator;
 public class UpdateCartJSServlet extends HttpServlet {
 
     private Cart cart;
+    private String workingItemId;
+    private String workingItemQuantity;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //workingItemId = request.getParameter("workingItemId");
+        workingItemId = request.getParameter("workingItemId");
+        workingItemQuantity = request.getParameter("workingItemQuantity");
+        System.out.println(workingItemId + workingItemQuantity);
+
 
         //从对话中，获取购物车
         HttpSession session = request.getSession();
-        cart = (Cart)session.getAttribute("cart");
+        cart = (Cart) session.getAttribute("cart");
 
-        Iterator<CartItem> cartItemIterator = cart.getAllCartItems();
+        if (Integer.parseInt(workingItemQuantity) < 1) {
+            cart.removeItemById(workingItemId);
+        } else {
+            cart.setQuantityByItemId(workingItemId, Integer.parseInt(workingItemQuantity));
+        }
+        session.setAttribute("cart",cart);
+
+        /*
 
         while (cartItemIterator.hasNext()) {
             //产品数量增加
@@ -31,7 +45,8 @@ public class UpdateCartJSServlet extends HttpServlet {
             String itemId = cartItem.getItem().getItemId();
 
             try {
-                int quantity = Integer.parseInt((String) request.getParameter("quantity"));
+                int quantity = Integer.parseInt((String) request.getParameter("itemId"));
+                System.out.println(quantity);
                 cart.setQuantityByItemId(itemId, quantity);
                 if (quantity < 1) {
                     cartItemIterator.remove();
@@ -41,17 +56,26 @@ public class UpdateCartJSServlet extends HttpServlet {
             }
         }
         session.setAttribute("cart", cart);
-
-
-        Cart cart2 = (Cart)session.getAttribute("cart");
-        Iterator<CartItem> cartItemIterator2 = cart2.getAllCartItems();
+*/      Cart cart2 = (Cart)session.getAttribute("cart");
+        Iterator<CartItem> cartItemIterator = cart.getAllCartItems();
+        CatalogService catalogService = new CatalogService();
+        Item item= catalogService.getItem(workingItemId);
         String quantityAll = "";
-        while (cartItemIterator2.hasNext()) {
-            //产品数量增加
-            CartItem cartItem2 = cartItemIterator2.next();
-            int quantity2 = cartItem2.getQuantity();
-            quantityAll += quantity2 + "," + cartItem2.getTotal() + "," + cart2.getSubTotal();
+        while(cartItemIterator.hasNext())
+        {
+            CartItem cartItem = (CartItem) cartItemIterator.next();
+            String itemId = cartItem.getItem().getItemId();
+            if(itemId.equals(workingItemId) )
+            {
+                System.out.println("yes");
+                int quantity2 = cartItem.getQuantity();
 
+                quantityAll += itemId + "," + quantity2 + "," + cartItem.getTotal() + "," + cart2.getSubTotal();
+                System.out.println(quantityAll);
+                break;
+            }
+            else
+                continue;
         }
 
         response.setContentType("text/xml");

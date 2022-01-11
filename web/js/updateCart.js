@@ -15,12 +15,12 @@ function createXMLHttpRequest()
     }
 }
 
-function updateCart() {
+function updateCart(cartItemId,cartItemQuantity) {
     //var username = document.NewAccountForm.username.value;
     //var workingItemId = document.getElementById('workingItemId').value;
     //sendRequest("updateCartQuantities?username=" + username);
-    var quantity = document.getElementById("quantity").value;
-    sendRequest("updateCartJSServlet?quantity="+ quantity);
+    console.log(cartItemId+cartItemQuantity);
+    sendRequest("updateCartJSServlet?workingItemId="+ cartItemId+"&workingItemQuantity="+cartItemQuantity);
     //sendRequest("updateCartQuantities");
 }
 
@@ -36,13 +36,16 @@ function processResponse() {
         if (xmlHttpRequest.status == 200) {
             var resp = xmlHttpRequest.responseText;
             var array = resp.split(",");
-            var quantity = document.getElementById("quantity");
-            var total = document.getElementById("total");
+            var Namearray = document.getElementsByName(array[0]);
+
+            var quantity = Namearray[0];
+            var total = Namearray[1];
             var subtotal = document.getElementById("subtotal");
 
-            quantity.innerText = array[0];
-            total.innerText = array[1];
-            subtotal.innerText = array[2];
+            console.log(resp);
+            quantity.innerText = array[1];
+            subtotal.innerText = array[3];
+            total.innerText = array[2];
         }
     }
 }

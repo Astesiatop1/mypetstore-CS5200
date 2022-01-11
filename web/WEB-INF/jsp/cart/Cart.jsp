@@ -45,7 +45,7 @@
 						${cartItem.inStock}
 					</td>
 					<td>
-						<input type="text" id="quantity" onblur="updateCart();" name="${cartItem.item.itemId}" value="${cartItem.quantity}">
+						<input type="text" id="quantity" onblur="updateCart(name,value);" name="${cartItem.item.itemId}" value="${cartItem.quantity}">
 						<div id="cartMsg"></div>
 						<script type="text/javascript" src="${pageContext.request.contextPath }/js/updateCart.js"></script>
 					</td>
@@ -57,7 +57,7 @@
 					</td>
 					<td>
 						<!--format标签显示总价fmt:formatNumber-->
-						<label id="total">${cartItem.total}</label>
+						<label id="total" name = "${cartItem.item.itemId}">${cartItem.total}</label>
 						<!--
 						<fmt:formatNumber value="${cartItem.total}" pattern="$#,##0.00" />
 						-->
